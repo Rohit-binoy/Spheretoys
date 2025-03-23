@@ -19,8 +19,7 @@ namespace It145_final_project___SphereToys
         public float Gravity { get; protected set; } = 0.5f; // Gravity 
         public float Friction { get; protected set; } = 0.99f; // Friction 
         public float Bounce { get; protected set; } = 0.7f; // the force after the bounce
-
-        // Constructor
+        
         public ball_physics(float x, float y, float radius)
         {
             X = x;
