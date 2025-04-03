@@ -8,82 +8,48 @@ using System.Windows.Forms;
 
 namespace It145_final_project___SphereToys
 {
-    internal class ball_physics
-    { 
-        public float X { get; protected set; } // X position
-        public float Y { get; protected set; } // Y position
-        public float VelocityX { get; protected set; } // Horizontal velocity
-        public float VelocityY { get; protected set; } // Vertical velocity
+    internal class ball_physics {
 
-        public float Radius { get; protected set; } // Ball radius
-        public float Gravity { get; protected set; } = 0.5f; // Gravity 
-        public float Friction { get; protected set; } = 0.99f; // Friction 
-        public float Bounce { get; protected set; } = 0.7f; // the force after the bounce
-        
-        public ball_physics(float x, float y, float radius)
+        public Vector2D position { get; set; } = new Vector2D();
+        public Vector2D velocity { get; set; } = new Vector2D();
+        public Vector2D gravity { get; set; } = new Vector2D(0, 0.981);
+
+        public double radius { get; set; } = 1;
+        public double frictionCoefficient { get; set; } = 0.99;
+        public double bounceCoefficient { get; set; } = 0.7;
+
+		public void Update()
         {
-            X = x;
-            Y = y;
-            Radius = radius;
+            velocity -= gravity;
+            position += velocity;
+            velocity *= frictionCoefficient;
         }
 
-        // to update ball position
-        public virtual void Update()
-        {
-            
-            VelocityY += Gravity;
-
-            
-            X += VelocityX;
-            Y += VelocityY;
-
-            
-            VelocityX *= Friction;
-            VelocityY *= Friction;
-        }
-
-        // to handle collision
         public virtual void HandleCollision(Control container)
         {
             int windowWidth = container.ClientSize.Width;
             int windowHeight = container.ClientSize.Height;
 
-            
-            if (X - Radius < 0)
-            {
-                X = Radius;
-                VelocityX = -VelocityX * Bounce;
-            }
-            else if (X + Radius > windowWidth)
-            {
-                X = windowWidth - Radius;
-                VelocityX = -VelocityX * Bounce;
+            if (position.X - radius < 0) {
+                position.X = radius;
+                velocity.X = -1 * bounceCoefficient * velocity.X;
+            } else if (velocity.X + radius > windowWidth) {
+                position.X = windowWidth - radius;
+                velocity.X = -1 * bounceCoefficient * velocity.X;
             }
 
-            
-            if (Y - Radius < 0)
-            {
-                Y = Radius;
-                VelocityY = -VelocityY * Bounce;
+			if (position.Y - radius < 0) {
+				position.Y = radius;
+				velocity.Y = -1 * bounceCoefficient * velocity.Y;
+            } else if (velocity.Y + radius > windowWidth) {
+                position.Y = windowWidth - radius;
+				velocity.Y = -1 * bounceCoefficient * velocity.Y;
             }
-            else if (Y + Radius > windowHeight)
-            {
-                Y = windowHeight - Radius;
-                VelocityY = -VelocityY * Bounce;
-            }
-        }
+		}
 
         // to render the ball
-        public virtual void Draw(Graphics g)
-        {
-            g.FillEllipse(Brushes.Red, X - Radius, Y - Radius, Radius * 2, Radius * 2);
-        }
-
-        // to set velocity
-        public void SetVelocity(float vx, float vy)
-        {
-            VelocityX = vx;
-            VelocityY = vy;
+        public virtual void Draw(Graphics g) {
+            g.FillEllipse(Brushes.Red, (float)(position.X - radius), (float)(position.Y - radius), (float)radius * 2, (float)radius * 2);
         }
     }
 }

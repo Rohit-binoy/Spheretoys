@@ -1,0 +1,9 @@
+C:\Users\Luke\Desktop\IT-145\SphereToys\Spheretoys\It145 final project - SphereToys\bin\Debug\It145 final project - SphereToys.exe.config
+C:\Users\Luke\Desktop\IT-145\SphereToys\Spheretoys\It145 final project - SphereToys\bin\Debug\It145 final project - SphereToys.exe
+C:\Users\Luke\Desktop\IT-145\SphereToys\Spheretoys\It145 final project - SphereToys\bin\Debug\It145 final project - SphereToys.pdb
+C:\Users\Luke\Desktop\IT-145\SphereToys\Spheretoys\It145 final project - SphereToys\obj\Debug\It145 final project - SphereToys.csproj.AssemblyReference.cache
+C:\Users\Luke\Desktop\IT-145\SphereToys\Spheretoys\It145 final project - SphereToys\obj\Debug\It145_final_project___SphereToys.Properties.Resources.resources
+C:\Users\Luke\Desktop\IT-145\SphereToys\Spheretoys\It145 final project - SphereToys\obj\Debug\It145 final project - SphereToys.csproj.GenerateResource.cache
+C:\Users\Luke\Desktop\IT-145\SphereToys\Spheretoys\It145 final project - SphereToys\obj\Debug\It145 final project - SphereToys.csproj.CoreCompileInputs.cache
+C:\Users\Luke\Desktop\IT-145\SphereToys\Spheretoys\It145 final project - SphereToys\obj\Debug\It145 final project - SphereToys.exe
+C:\Users\Luke\Desktop\IT-145\SphereToys\Spheretoys\It145 final project - SphereToys\obj\Debug\It145 final project - SphereToys.pdb
